@@ -1,8 +1,7 @@
 # pyskel_bc
 
 A skeleton of a Python package with CLI and test suite included. Taken from
-[pyskel](https://github.com/mapbox/pyskel) and modified slightly for British
-Columbia python packages.
+[pyskel](https://github.com/mapbox/pyskel) and modified slightly for quickstarting British Columbia python packages as per BC's [guide](https://github.com/bcgov/BC-Policy-Framework-For-GitHub/tree/master/BC-Gov-Org-HowTo).
 
 ![pyskel](https://farm4.staticflickr.com/3951/15672691531_3037819613_o_d.png)
 
@@ -49,10 +48,37 @@ information about this project.
 
 ## See also
 
-Here are a few other tools for initializing Python projects.
+Here are a few other tools for initializing Python projects:
 
-- Paste Script's `paster create <http://pythonpaste.org/script/#paster-create>`__
-- `cookiecutter-pypackage <https://github.com/audreyr/cookiecutter-pypackage>`__ is
-  a Cookiecutter template for a Python package. Cookiecutter supports many languages,
-  includes Travis configuration and much more.
+- Paste Script's [paster create](http://pythonpaste.org/script/#paster-create) 
+- [cookiecutter-pypackage](https://github.com/audreyr/cookiecutter-pypackage) is
+a Cookiecutter template for a Python package. Cookiecutter supports many languages, includes Travis configuration and much more.
 
+
+## Requirements
+
+## Installation
+
+## Project Status
+
+## Goals/Roadmap
+
+## Getting Help or Reporting an Issue
+
+## How to Contribute
+
+## License
+
+    Copyright 2016 Province of British Columbia
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at 
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
