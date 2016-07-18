@@ -7,15 +7,15 @@ with codecs_open('README.rst', encoding='utf-8') as f:
     long_description = f.read()
 
 
-setup(name='pyskel',
+setup(name='pyskel_bc',
       version='0.0.1',
       description=u"Skeleton of a Python package",
       long_description=long_description,
       classifiers=[],
       keywords='',
-      author=u"Sean Gillies",
-      author_email='sean@mapbox.com',
-      url='https://github.com/mapbox/pyskel',
+      author=u"Simon Norris",
+      author_email='snorris@hillcrestgeo.ca',
+      url='https://github.com/smnorris/pyskel_bc',
       license='MIT',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       include_package_data=True,
@@ -28,6 +28,6 @@ setup(name='pyskel',
       },
       entry_points="""
       [console_scripts]
-      pyskel=pyskel.scripts.cli:cli
+      pyskel_bc=pyskel_bc.scripts.cli:cli
       """
       )
