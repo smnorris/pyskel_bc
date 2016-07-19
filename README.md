@@ -54,18 +54,82 @@ Here are a few other tools for initializing Python projects:
 - [cookiecutter-pypackage](https://github.com/audreyr/cookiecutter-pypackage) is
 a Cookiecutter template for a Python package. Cookiecutter supports many languages, includes Travis configuration and much more.
 
-
+# BC GTS Python Package Installation Instructions
 ## Requirements
+Access to BC Government ArcGIS GTS servers or a local ArcGIS install.
 
-## Installation
+## General Installation
+1. Open a windows command prompt and ensure that the ArcGIS python and scripts are inlcuded in the PATH:  
+  ```
+  set PATH="E:\sw_nt\Python27\ArcGISx6410.3";"E:\sw_nt\Python27\ArcGISx6410.3\Scripts";%PATH%
+  ```
 
-## Project Status
+2. Ensure [pip](https://pypi.python.org/pypi/pip) is installed to server, [install](https://pip.pypa.io/en/stable/installing/) if it is not.
 
-## Goals/Roadmap
+4. Download and unzip the repository (or `git clone <repository.git>` from a command line tool with git installed such as cygwin)
 
-## Getting Help or Reporting an Issue
+5. Back at the windows command prompt:
+```
+  cd <repository>
+  pip install .
+```
 
-## How to Contribute
+## Installation for development and testing on BC GTS
+
+1. Open a windows command prompt and ensure that 32 bit ArcGIS python and scripts are inlcuded in the PATH:  
+
+    ```
+    set PATH="E:\sw_nt\Python27\ArcGISx6410.3";"E:\sw_nt\Python27\ArcGISx6410.3\Scripts";%PATH%
+    ```
+
+2. Ensure [pip](https://pypi.python.org/pypi/pip) is installed to server, [install](https://pip.pypa.io/en/stable/installing/) if it is not.
+
+3. Create and enable a [virtualenv](https://virtualenv.pypa.io/en/stable) for testing/development so we don't have to worry about conflicting with system installed python packages  
+
+    ```
+    pip install virtualenv   # (if necessary)  
+    mkdir arcplus  
+    cd arcplus
+    mkdir arcplus_env
+    virtualenv arcplus_env
+    arcplus_env\Scripts\activate
+    ```
+
+4. Download and unzip the repository (or `git clone <repository.git>` at a git enabled command line such as cygwin)
+
+5. Back at the windows command prompt:
+    ```
+    cd <repository>
+    pip install -e .
+    ```
+
+6. Ensure we can reach the module from the virtualenv (based on this [USGS guide](https://my.usgs.gov/confluence/display/cdi/Calling+arcpy+from+an+external+virtual+Python+environment)) by creating a file `Lib\site-packages\ArcGIS.pth` within the virtual environment. Include these lines (or similar, check required paths by starting ArcMap and typing "import sys; print sys.path" into the python window):
+    ```
+    # ArcGIS.pth
+    # Path to ArcGIS arcpy modules
+    # Place in folder ...\<path to your virtual environment>\lib\site-packages\
+    e:\\sw_nt\\arcgis\\desktop10.3\\arcpy
+    C:\\Windows\\system32\\python27.zip
+    E:\\sw_nt\\Python27\\ArcGIS10.3\\Lib
+    E:\\sw_nt\\Python27\\ArcGIS10.3\\DLLs
+    E:\\sw_nt\\Python27\\ArcGIS10.3\\Lib\\lib-tk
+    E:\\sw_nt\\ArcGIS\\Desktop10.3\\bin
+    E:\\sw_nt\\Python27\\ArcGIS10.3
+    E:\\sw_nt\\Python27\\ArcGIS10.3\\lib\\site-packages
+    E:\\sw_nt\\ArcGIS\\Desktop10.3\\ArcPy
+    E:\\sw_nt\\ArcGIS\\Desktop10.3\\ArcToolBox\\Scripts
+    E:\\sw_nt\\ArcGIS\\EsriProductionMapping\\Desktop10.3\\Bin
+    E:\\sw_nt\\ArcGIS\\EsriProductionMapping\\Desktop10.3\\arcpyproduction
+    E:\\sw_nt\\Python27\\ArcGIS10.3\\lib\\site-packages\\win32
+    E:\\sw_nt\\Python27\\ArcGIS10.3\\lib\\site-packages\\win32\\lib
+    E:\\sw_nt\\Python27\\ArcGIS10.3\\lib\\site-packages\\Pythonwin
+    ```
+
+7. If required, activate the virtualenv within an ArcGIS session by issuing this command from the ArcGIS python window ([as per this question on StackOverflow](https://gis.stackexchange.com/questions/7333/running-arcgis-10-0-under-virtualenv)):
+    ```
+    execfile(r'<path_to_env>\Scripts\activate_this.py', {'__file__': r'<path_to_env>\Scripts\activate_this.py'})
+    import <module>
+    ```
 
 ## License
 
