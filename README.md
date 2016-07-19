@@ -58,8 +58,8 @@ a Cookiecutter template for a Python package. Cookiecutter supports many languag
 ## Requirements
 Access to BC Government ArcGIS GTS servers or a local ArcGIS install.
 
-## General Installation
-1. Open a windows command prompt and ensure that the ArcGIS python and scripts are inlcuded in the PATH:  
+## Installation
+1. Open a windows command prompt and ensure that ArcGIS Python and scripts are inlcuded in the PATH. If a 64bit ArcGIS Python is available, use it: 
   ```
   set PATH="E:\sw_nt\Python27\ArcGISx6410.3";"E:\sw_nt\Python27\ArcGISx6410.3\Scripts";%PATH%
   ```
@@ -74,17 +74,17 @@ Access to BC Government ArcGIS GTS servers or a local ArcGIS install.
   pip install .
 ```
 
-## Installation for development and testing on BC GTS
+## Development and testing
 
-1. Open a windows command prompt and ensure that 32 bit ArcGIS python and scripts are inlcuded in the PATH:  
+1. Open a windows command prompt and ensure that ArcGIS Python and scripts are inlcuded in the PATH. If a 64bit ArcGIS Python is available, use it:  
 
     ```
     set PATH="E:\sw_nt\Python27\ArcGISx6410.3";"E:\sw_nt\Python27\ArcGISx6410.3\Scripts";%PATH%
     ```
 
-2. Ensure [pip](https://pypi.python.org/pypi/pip) is installed to server, [install](https://pip.pypa.io/en/stable/installing/) if it is not.
+2. Ensure [pip](https://pypi.python.org/pypi/pip) is installed, [install](https://pip.pypa.io/en/stable/installing/) if it is not.
 
-3. Create and enable a [virtualenv](https://virtualenv.pypa.io/en/stable) for testing/development so we don't have to worry about conflicting with system installed python packages  
+3. Create and enable a [virtualenv](https://virtualenv.pypa.io/en/stable) for testing/development so we don't have to worry about conflicting with system installed python packages:
 
     ```
     pip install virtualenv   # (if necessary)  
@@ -103,7 +103,7 @@ Access to BC Government ArcGIS GTS servers or a local ArcGIS install.
     pip install -e .
     ```
 
-6. Ensure we can reach the module from the virtualenv (based on this [USGS guide](https://my.usgs.gov/confluence/display/cdi/Calling+arcpy+from+an+external+virtual+Python+environment)) by creating a file `Lib\site-packages\ArcGIS.pth` within the virtual environment. Include these lines (or similar, check required paths by starting ArcMap and typing "import sys; print sys.path" into the python window):
+6. Ensure we can reach the module from the virtualenv (based on this [USGS guide](https://my.usgs.gov/confluence/display/cdi/Calling+arcpy+from+an+external+virtual+Python+environment)) by creating a file `Lib\site-packages\ArcGIS.pth` within the virtual environment. Include these lines (or similar, check required paths by starting ArcMap and typing `import sys; print sys.path` into the python window):
     ```
     # ArcGIS.pth
     # Path to ArcGIS arcpy modules
