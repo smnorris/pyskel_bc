@@ -88,22 +88,12 @@ Access to BC Government ArcGIS GTS servers or a local ArcGIS install.
 
     ```
     pip install virtualenv   # (if necessary)  
-    mkdir arcplus  
-    cd arcplus
-    mkdir arcplus_env
-    virtualenv arcplus_env
-    arcplus_env\Scripts\activate
+    mkdir myproject_env
+    virtualenv myproject_env
+    myproject_env\Scripts\activate
     ```
 
-4. Download and unzip the repository (or `git clone <repository.git>` at a git enabled command line such as cygwin)
-
-5. Back at the windows command prompt:
-    ```
-    cd <repository>
-    pip install -e .
-    ```
-
-6. Ensure we can reach the module from the virtualenv (based on this [USGS guide](https://my.usgs.gov/confluence/display/cdi/Calling+arcpy+from+an+external+virtual+Python+environment)) by creating a file `Lib\site-packages\ArcGIS.pth` within the virtual environment. Include these lines (or similar, check required paths by starting ArcMap and typing `import sys; print sys.path` into the python window):
+4. Ensure we can reach the arcpy module from the virtualenv (based on this [USGS guide](https://my.usgs.gov/confluence/display/cdi/Calling+arcpy+from+an+external+virtual+Python+environment)) by creating a file `Lib\site-packages\ArcGIS.pth` within the virtual environment folder. Include these lines (or similar, check required paths by starting ArcMap and typing `import sys; print sys.path` into the python window):
     ```
     # ArcGIS.pth
     # Path to ArcGIS arcpy modules
@@ -125,11 +115,20 @@ Access to BC Government ArcGIS GTS servers or a local ArcGIS install.
     E:\\sw_nt\\Python27\\ArcGIS10.3\\lib\\site-packages\\Pythonwin
     ```
 
+5. Download and unzip the repository (or `git clone https://github.com/smnorris/myproject.git` at a git enabled command line such as cygwin)
+
+6. Back at the windows command prompt:
+    ```
+    cd myproject
+    pip install -e .[test]
+    ```
+
 7. If required, activate the virtualenv within an ArcGIS session by issuing this command from the ArcGIS python window ([as per this question on StackOverflow](https://gis.stackexchange.com/questions/7333/running-arcgis-10-0-under-virtualenv)):
     ```
     execfile(r'<path_to_env>\Scripts\activate_this.py', {'__file__': r'<path_to_env>\Scripts\activate_this.py'})
-    import <module>
+    import myproject
     ```
+
 
 ## License
 
