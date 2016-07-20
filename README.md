@@ -93,26 +93,24 @@ Access to BC Government ArcGIS GTS servers or a local ArcGIS install.
     myproject_env\Scripts\activate
     ```
 
-4. Ensure we can reach the arcpy module from the virtualenv (based on this [USGS guide](https://my.usgs.gov/confluence/display/cdi/Calling+arcpy+from+an+external+virtual+Python+environment)) by creating a file `Lib\site-packages\ArcGIS.pth` within the virtual environment folder. Include these lines (or similar, check required paths by starting ArcMap and typing `import sys; print sys.path` into the python window):
+4. Ensure we can reach the arcpy module from the virtualenv (based on this [USGS guide](https://my.usgs.gov/confluence/display/cdi/Calling+arcpy+from+an+external+virtual+Python+environment)) by creating a file `Lib\site-packages\ArcGIS.pth` within the virtual environment folder. Include these lines (or similar, check for required 32 bit paths by starting ArcMap and typing `import sys; print sys.path` into the python window):
     ```
     # ArcGIS.pth
     # Path to ArcGIS arcpy modules
     # Place in folder ...\<path to your virtual environment>\lib\site-packages\
-    e:\\sw_nt\\arcgis\\desktop10.3\\arcpy
-    C:\\Windows\\system32\\python27.zip
-    E:\\sw_nt\\Python27\\ArcGIS10.3\\Lib
-    E:\\sw_nt\\Python27\\ArcGIS10.3\\DLLs
-    E:\\sw_nt\\Python27\\ArcGIS10.3\\Lib\\lib-tk
-    E:\\sw_nt\\ArcGIS\\Desktop10.3\\bin
-    E:\\sw_nt\\Python27\\ArcGIS10.3
-    E:\\sw_nt\\Python27\\ArcGIS10.3\\lib\\site-packages
+            
+    E:\\sw_nt\\Python27\\ArcGISx6410.3
+    E:\\sw_nt\\Python27\\ArcGISx6410.3\\Lib
+    E:\\sw_nt\\Python27\\ArcGISx6410.3\\DLLs
+    E:\\sw_nt\\Python27\\ArcGISx6410.3\\Lib\\lib-tk
+    E:\\sw_nt\\Python27\\ArcGISx6410.3\\lib\\site-packages
+    E:\\sw_nt\\Python27\\ArcGISx6410.3\\lib\\site-packages\\win32
+    E:\\sw_nt\\Python27\\ArcGISx6410.3\\lib\\site-packages\\win32\\lib
+    E:\\sw_nt\\Python27\\ArcGISx6410.3\\lib\\site-packages\\Pythonwin
+    E:\\sw_nt\\ArcGIS\\Desktop10.3\\bin64
     E:\\sw_nt\\ArcGIS\\Desktop10.3\\ArcPy
     E:\\sw_nt\\ArcGIS\\Desktop10.3\\ArcToolBox\\Scripts
-    E:\\sw_nt\\ArcGIS\\EsriProductionMapping\\Desktop10.3\\Bin
-    E:\\sw_nt\\ArcGIS\\EsriProductionMapping\\Desktop10.3\\arcpyproduction
-    E:\\sw_nt\\Python27\\ArcGIS10.3\\lib\\site-packages\\win32
-    E:\\sw_nt\\Python27\\ArcGIS10.3\\lib\\site-packages\\win32\\lib
-    E:\\sw_nt\\Python27\\ArcGIS10.3\\lib\\site-packages\\Pythonwin
+
     ```
 
 5. Download and unzip the repository (or `git clone https://github.com/smnorris/myproject.git` at a git enabled command line such as cygwin)
