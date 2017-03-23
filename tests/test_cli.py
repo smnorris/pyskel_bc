@@ -1,6 +1,6 @@
 from click.testing import CliRunner
 
-from pyskel_bc.scripts.cli import cli
+from pyskel_bc.cli import cli
 
 
 def test_cli_count():

@@ -28,6 +28,6 @@ setup(name='pyskel_bc',
       },
       entry_points="""
       [console_scripts]
-      pyskel_bc=pyskel_bc.scripts.cli:cli
+      pyskel_bc=pyskel_bc.cli:cli
       """
       )
