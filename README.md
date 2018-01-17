@@ -95,11 +95,14 @@ information about this project.
 
 5. Clone the repository using your tool of choice: 
 
-    `git clone https://github.com/smnorris/pyskel_bc.git` 
+    ```
+    git clone https://github.com/smnorris/pyskel_bc.git
+    ```
 
 6. Replace all occurrences of 'pyskel_bc' with the name of your own project using your tool of choice. See quick start above for a bash command.
 
 7. Back at the windows command prompt, within the virtual environment:
+
     ```
     cd myproject
     pip install -e .[test]
@@ -108,8 +111,8 @@ information about this project.
 8. Give the command line program a try:
 
     ```
-        myproject --help
-        myproject 4
+    myproject --help
+    myproject 4
     ```
 
 9. If required, activate the virtualenv within an ArcGIS session by issuing this command from the ArcGIS python window ([as per this question on StackOverflow](https://gis.stackexchange.com/questions/7333/running-arcgis-10-0-under-virtualenv)):
