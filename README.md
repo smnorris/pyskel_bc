@@ -11,36 +11,36 @@ To use pyskel_bc as the start of a new project, do the following, **preferably i
 Clone the repo:
 
     ```
-        git clone https://github.com/smnorris/pyskel_bc myproject
-        cd myproject
+    git clone https://github.com/smnorris/pyskel_bc myproject
+    cd myproject
     ```
 
 Replace all occurrences of 'pyskel_bc' with the name of your own project.
 (Note: the commands below require bash, find, and sed and are yet tested only on OS X.)
 
     ```
-        if [ -d pyskel_bc ]; then find . -not -path './.git*' -type f -exec sed -i '' -e 's/pyskel_bc/myproject/g' {} + ; fi
-        mv pyskel_bc myproject
+    if [ -d pyskel_bc ]; then find . -not -path './.git*' -type f -exec sed -i '' -e 's/pyskel_bc/myproject/g' {} + ; fi
+    mv pyskel_bc myproject
     ```
 
 Install in locally editable (``-e``) mode and run the tests:
 
     ```
-        pip install -e .[test]
-        py.test
+    pip install -e .[test]
+    py.test
     ```
 
 Give the command line program a try:
 
     ```
-        myproject --help
-        myproject 4
+    myproject --help
+    myproject 4
     ```
 
 Test with [tox](https://tox.readthedocs.io/en/latest/) if you are supporting multiple versions of Python:
 
     ```
-        tox
+    tox
     ```
 
 To help prevent uncustomized forks of pyskel_bc from being uploaded to PyPI,
