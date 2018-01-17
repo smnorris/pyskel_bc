@@ -3,12 +3,12 @@
 A skeleton of a Python package with CLI and test suite included. Taken from
 [pyskel](https://github.com/mapbox/pyskel) and modified slightly for quickstarting British Columbia python packages as per BC's [guide](https://github.com/bcgov/BC-Policy-Framework-For-GitHub/tree/master/BC-Gov-Org-HowTo).
 
-![pyskel](https://farm4.staticflickr.com/3951/15672691531_3037819613_o_d.png)
 
 ## Customization quick start
 
-To use pyskel_bc as the start of a new project, do the following, preferably in
-a virtual environment. Clone the repo.
+To use pyskel_bc as the start of a new project, do the following, **preferably in a virtual environment**.  
+
+Clone the repo:
 
 ```
     git clone https://github.com/smnorris/pyskel_bc myproject
@@ -23,18 +23,24 @@ Replace all occurrences of 'pyskel_bc' with the name of your own project.
     mv pyskel_bc myproject
 ```
 
-Then install in locally editable (``-e``) mode and run the tests.
+Install in locally editable (``-e``) mode and run the tests:
 
 ```
     pip install -e .[test]
     py.test
 ```
 
-Finally, give the command line program a try.
+Give the command line program a try:
 
 ```
     myproject --help
     myproject 4
+```
+
+Test with [tox](https://tox.readthedocs.io/en/latest/) if you are supporting multiple versions of Python:
+
+```
+    tox
 ```
 
 To help prevent uncustomized forks of pyskel_bc from being uploaded to PyPI,
@@ -64,14 +70,14 @@ Access to BC Government ArcGIS GTS servers or a local ArcGIS install.
   set PATH="E:\sw_nt\Python27\ArcGISx6410.3";"E:\sw_nt\Python27\ArcGISx6410.3\Scripts";%PATH%
   ```
 
-2. Ensure [pip](https://pypi.python.org/pypi/pip) is installed to server, [install](https://pip.pypa.io/en/stable/installing/) if it is not.
+2. Ensure [pip](https://pypi.python.org/pypi/pip) is available, [install](https://pip.pypa.io/en/stable/installing/) if it is not (to your workspace, not the system Python).
 
-4. Download and unzip the repository (or `git clone <repository.git>` from a command line tool with git installed such as cygwin)
+4. Clone the repository: `git clone https://github.com/smnorris/pyskel_bc.git` 
 
 5. Back at the windows command prompt:
 ```
   cd <repository>
-  pip install .
+  pip install -e --user .[test]
 ```
 
 ## Development and testing
@@ -82,7 +88,7 @@ Access to BC Government ArcGIS GTS servers or a local ArcGIS install.
     set PATH="E:\sw_nt\Python27\ArcGISx6410.3";"E:\sw_nt\Python27\ArcGISx6410.3\Scripts";%PATH%
     ```
 
-2. Ensure [pip](https://pypi.python.org/pypi/pip) is installed, [install](https://pip.pypa.io/en/stable/installing/) if it is not.
+2. Ensure [pip](https://pypi.python.org/pypi/pip) is available, [install](https://pip.pypa.io/en/stable/installing/) if it is not (to your workspace, not the system Python).
 
 3. Create and enable a [virtualenv](https://virtualenv.pypa.io/en/stable) for testing/development so we don't have to worry about conflicting with system installed python packages:
 
@@ -93,7 +99,7 @@ Access to BC Government ArcGIS GTS servers or a local ArcGIS install.
     myproject_env\Scripts\activate
     ```
 
-4. Ensure we can reach the arcpy module from the virtualenv (based on this [USGS guide](https://my.usgs.gov/confluence/display/cdi/Calling+arcpy+from+an+external+virtual+Python+environment)) by creating a file `Lib\site-packages\ArcGIS.pth` within the virtual environment folder. Include these lines (or similar, check for required 32 bit paths by starting ArcMap and typing `import sys; print sys.path` into the python window):
+4. If ArcGIS/arcpy is required by the module, ensure we can reach the arcpy module from the virtualenv (based on this [USGS guide](https://my.usgs.gov/confluence/display/cdi/Calling+arcpy+from+an+external+virtual+Python+environment)) by creating a file `Lib\site-packages\ArcGIS.pth` within the virtual environment folder. Include these lines (or similar, check for required 32 bit paths by starting ArcMap and typing `import sys; print sys.path` into the python window):
     ```
     # ArcGIS.pth
     # Path to ArcGIS arcpy modules
@@ -113,7 +119,7 @@ Access to BC Government ArcGIS GTS servers or a local ArcGIS install.
 
     ```
 
-5. Download and unzip the repository (or `git clone https://github.com/smnorris/myproject.git` at a git enabled command line such as cygwin)
+5. Clone the repository: `git clone https://github.com/smnorris/pyskel_bc.git` 
 
 6. Back at the windows command prompt:
     ```
@@ -130,7 +136,7 @@ Access to BC Government ArcGIS GTS servers or a local ArcGIS install.
 
 ## License
 
-    Copyright 2016 Province of British Columbia
+    Copyright 2018 Province of British Columbia
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
