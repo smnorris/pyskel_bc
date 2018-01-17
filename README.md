@@ -52,14 +52,6 @@ when you customize pyskel_bc.
 A [post on the Mapbox blog](https://www.mapbox.com/blog/pyskel) has more
 information about this project.
 
-## See also
-
-Here are a few other tools for initializing Python projects:
-
-- Paste Script's [paster create](http://pythonpaste.org/script/#paster-create) 
-- [cookiecutter-pypackage](https://github.com/audreyr/cookiecutter-pypackage) is
-a Cookiecutter template for a Python package. Cookiecutter supports many languages, includes Travis configuration and much more.
-
 
 ## Usage on BC GTS Windows 
 
@@ -125,6 +117,15 @@ a Cookiecutter template for a Python package. Cookiecutter supports many languag
     execfile(r'<path_to_env>\Scripts\activate_this.py', {'__file__': r'<path_to_env>\Scripts\activate_this.py'})
     import myproject
     ```
+
+
+## See also
+
+Here are a few other tools for initializing Python projects:
+
+- Paste Script's [paster create](http://pythonpaste.org/script/#paster-create) 
+- [cookiecutter-pypackage](https://github.com/audreyr/cookiecutter-pypackage) is
+a Cookiecutter template for a Python package. Cookiecutter supports many languages, includes Travis configuration and much more.
 
 
 ## License
