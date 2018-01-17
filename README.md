@@ -61,7 +61,7 @@ Here are a few other tools for initializing Python projects:
 a Cookiecutter template for a Python package. Cookiecutter supports many languages, includes Travis configuration and much more.
 
 
-## Development and testing on BC GTS
+## Usage on BC GTS Windows 
 
 1. Open a windows command prompt and ensure that ArcGIS Python and scripts are inlcuded in the PATH. If a 64bit ArcGIS Python is available, use it:  
 
@@ -81,6 +81,7 @@ a Cookiecutter template for a Python package. Cookiecutter supports many languag
     ```
 
 4. If ArcGIS/arcpy is required by the module, ensure we can reach the arcpy module from the virtualenv (based on this [USGS guide](https://my.usgs.gov/confluence/display/cdi/Calling+arcpy+from+an+external+virtual+Python+environment)) by creating a file `Lib\site-packages\ArcGIS.pth` within the virtual environment folder. Include these lines (or similar, check for required 32 bit paths by starting ArcMap and typing `import sys; print sys.path` into the python window):
+
     ```
     # ArcGIS.pth
     # Path to ArcGIS arcpy modules
@@ -100,9 +101,11 @@ a Cookiecutter template for a Python package. Cookiecutter supports many languag
 
     ```
 
-5. Clone the repository: `git clone https://github.com/smnorris/pyskel_bc.git` 
+5. Clone the repository using your tool of choice: 
 
-6. Replace all occurrences of 'pyskel_bc' with the name of your own project using your tool of choice. See above for the bash command.
+    `git clone https://github.com/smnorris/pyskel_bc.git` 
+
+6. Replace all occurrences of 'pyskel_bc' with the name of your own project using your tool of choice. See quick start above for a bash command.
 
 7. Back at the windows command prompt, within the virtual environment:
     ```
@@ -110,7 +113,14 @@ a Cookiecutter template for a Python package. Cookiecutter supports many languag
     pip install -e .[test]
     ```
 
-8. If required, activate the virtualenv within an ArcGIS session by issuing this command from the ArcGIS python window ([as per this question on StackOverflow](https://gis.stackexchange.com/questions/7333/running-arcgis-10-0-under-virtualenv)):
+8. Give the command line program a try:
+
+```
+    myproject --help
+    myproject 4
+```
+
+9. If required, activate the virtualenv within an ArcGIS session by issuing this command from the ArcGIS python window ([as per this question on StackOverflow](https://gis.stackexchange.com/questions/7333/running-arcgis-10-0-under-virtualenv)):
     ```
     execfile(r'<path_to_env>\Scripts\activate_this.py', {'__file__': r'<path_to_env>\Scripts\activate_this.py'})
     import myproject
