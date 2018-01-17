@@ -60,27 +60,8 @@ Here are a few other tools for initializing Python projects:
 - [cookiecutter-pypackage](https://github.com/audreyr/cookiecutter-pypackage) is
 a Cookiecutter template for a Python package. Cookiecutter supports many languages, includes Travis configuration and much more.
 
-# BC GTS Python Package Installation Instructions
-## Requirements
-Access to BC Government ArcGIS GTS servers or a local ArcGIS install.
 
-## Installation
-1. Open a windows command prompt and ensure that ArcGIS Python and scripts are inlcuded in the PATH. If a 64bit ArcGIS Python is available, use it: 
-  ```
-  set PATH="E:\sw_nt\Python27\ArcGISx6410.3";"E:\sw_nt\Python27\ArcGISx6410.3\Scripts";%PATH%
-  ```
-
-2. Ensure [pip](https://pypi.python.org/pypi/pip) is available, [install](https://pip.pypa.io/en/stable/installing/) if it is not (to your workspace, not the system Python).
-
-4. Clone the repository: `git clone https://github.com/smnorris/pyskel_bc.git` 
-
-5. Back at the windows command prompt:
-```
-  cd <repository>
-  pip install -e --user .[test]
-```
-
-## Development and testing
+## Development and testing on BC GTS
 
 1. Open a windows command prompt and ensure that ArcGIS Python and scripts are inlcuded in the PATH. If a 64bit ArcGIS Python is available, use it:  
 
