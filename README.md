@@ -74,7 +74,7 @@ a Cookiecutter template for a Python package. Cookiecutter supports many languag
 3. Create and enable a [virtualenv](https://virtualenv.pypa.io/en/stable) for testing/development so we don't have to worry about conflicting with system installed python packages:
 
     ```
-    pip install virtualenv   # (if necessary)  
+    pip install --user virtualenv   # (if necessary)  
     mkdir myproject_env
     virtualenv myproject_env
     myproject_env\Scripts\activate
@@ -102,7 +102,7 @@ a Cookiecutter template for a Python package. Cookiecutter supports many languag
 
 5. Clone the repository: `git clone https://github.com/smnorris/pyskel_bc.git` 
 
-6. Back at the windows command prompt:
+6. Back at the windows command prompt, within the virtual environment:
     ```
     cd myproject
     pip install -e .[test]
