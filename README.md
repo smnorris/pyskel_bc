@@ -102,13 +102,15 @@ a Cookiecutter template for a Python package. Cookiecutter supports many languag
 
 5. Clone the repository: `git clone https://github.com/smnorris/pyskel_bc.git` 
 
-6. Back at the windows command prompt, within the virtual environment:
+6. Replace all occurrences of 'pyskel_bc' with the name of your own project using your tool of choice. See above for the bash command.
+
+7. Back at the windows command prompt, within the virtual environment:
     ```
     cd myproject
     pip install -e .[test]
     ```
 
-7. If required, activate the virtualenv within an ArcGIS session by issuing this command from the ArcGIS python window ([as per this question on StackOverflow](https://gis.stackexchange.com/questions/7333/running-arcgis-10-0-under-virtualenv)):
+8. If required, activate the virtualenv within an ArcGIS session by issuing this command from the ArcGIS python window ([as per this question on StackOverflow](https://gis.stackexchange.com/questions/7333/running-arcgis-10-0-under-virtualenv)):
     ```
     execfile(r'<path_to_env>\Scripts\activate_this.py', {'__file__': r'<path_to_env>\Scripts\activate_this.py'})
     import myproject
